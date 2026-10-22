@@ -46,19 +46,35 @@
       </div>
 
       <!-- 3개 완주 시 열리는 보상 이미지 영역 -->
-<div id="rewardSection" class="reward-section" style="display: none;">
-  <div class="reward-card">
-    <p class="eyebrow">ALL CLEAR REWARD</p>
-    <h2>축하합니다!<br><em>꽃이 완전히 피었습니다.</em></h2>
-    <p>아래 보상 이미지를 길게 눌러 저장하거나 스크린샷하세요!</p>
-    <div class="reward-img-wrap">
-      <img src="reward.png" alt="보상 이미지" loading="lazy">
-    </div>
-  </div>
-</div>
+      <div id="rewardSection" class="reward-section" style="display: none;">
+        <div class="reward-card">
+          <p class="eyebrow">ALL CLEAR REWARD</p>
+          <h2>축하합니다!<br><em>꽃이 완전히 피었습니다.</em></h2>
+          <p>아래 보상 이미지를 길게 눌러 저장하거나 스크린샷하세요!</p>
+          <div class="reward-img-wrap">
+            <img src="reward.png" alt="보상 이미지" loading="lazy">
+          </div>
+
+          <!-- 졸준위 전용 수령 확인 버튼 -->
+          <div class="admin-claim-wrap">
+            <button id="adminClaimBtn" class="admin-claim-btn" onclick="verifyAdminCode()">
+              🔒 수령 확인 (졸준위 전용)
+            </button>
+          </div>
+        </div>
+      </div>
 
       <div class="reset-wrap">
         <button class="reset-btn" onclick="resetProgress()">진행상태 초기화</button>
+      </div>
+    </div>
+
+    <!-- 수령 완료 후 화면 차단 레이어 -->
+    <div id="blockedOverlay" class="blocked-overlay" style="display: none;">
+      <div class="blocked-card">
+        <div class="blocked-icon">✅</div>
+        <h2>보상 수령 완료</h2>
+        <p>이미 리워드(상품) 수령이 완료된 페이지입니다.<br>중복 수령은 불가능합니다.</p>
       </div>
     </div>
   </main>
