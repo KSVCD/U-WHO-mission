@@ -1,5 +1,5 @@
 const TOTAL_MISSIONS = 3;
-const ADMIN_CODE = "261111"; // 졸준위 확인 코드
+const ADMIN_CODE = "261111"; // 졸준위 확인 및 초기화 인증 코드
 
 let cleared = JSON.parse(localStorage.getItem("uWhoMissionCleared") || "[]").map(Number);
 let isRedeemed = localStorage.getItem("uWhoRewardRedeemed") === "true";
@@ -73,7 +73,6 @@ function processQR(n) {
       
       setTimeout(() => {
         alert(`🎉 ZONE 0${n} 도장을 획득했습니다!`);
-        // 주소창의 ?mission=N 제거하여 메인 상태로 깔끔하게 정리
         if (window.history && window.history.replaceState) {
           window.history.replaceState({}, document.title, window.location.pathname);
         }
@@ -90,7 +89,7 @@ function verifyAdminCode() {
   }
 
   const inputCode = prompt("졸준위 전용 인증 코드를 입력하세요:");
-  if (inputCode === null) return; // 취소 누른 경우
+  if (inputCode === null) return;
 
   if (inputCode.trim() === ADMIN_CODE) {
     if (confirm("수령 완료 처리하시겠습니까?\n처리 후에는 중복 수령 방지를 위해 더 이상 사용할 수 없습니다.")) {
@@ -104,12 +103,23 @@ function verifyAdminCode() {
   }
 }
 
-function resetProgress() {
-  if (isRedeemed) return; // 이미 수령한 경우 초기화 불가
+// 비밀 코드를 입력받아 진행상태 및 수령 완료 상태를 초기화하는 함수
+function verifyResetCode() {
+  const inputCode = prompt("초기화 인증 코드를 입력하세요:");
+  if (inputCode === null) return;
 
-  if (confirm("진행상태를 초기화하시겠습니까?")) {
-    cleared = [];
-    save();
+  if (inputCode.trim() === ADMIN_CODE) {
+    if (confirm("정말 모든 진행 상태와 수령 기록을 초기화하시겠습니까?")) {
+      cleared = [];
+      isRedeemed = false;
+      localStorage.removeItem("uWhoMissionCleared");
+      localStorage.removeItem("uWhoRewardRedeemed");
+      alert("초기화되었습니다.");
+      updateUI();
+      window.location.reload(); // 페이지 새로고침으로 완벽히 복구
+    }
+  } else {
+    alert("인증 코드가 올바르지 않습니다.");
   }
 }
 
