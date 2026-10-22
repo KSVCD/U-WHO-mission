@@ -124,3 +124,12 @@ h1 em{font-style:normal;color:var(--pink)}
   font-weight: 700;
   width: 100%;
 }
+
+/* 수령 확인 버튼 아래 작은 안내 문구 스타일 */
+.admin-guide-text {
+  font-size: 11px;
+  color: #88858d;
+  margin-top: 10px;
+  margin-bottom: 0;
+  line-height: 1.4;
+}
