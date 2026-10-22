@@ -48,5 +48,66 @@ h1 em{font-style:normal;color:var(--pink)}
 .reward-img-wrap{margin-top:20px;border-radius:16px;overflow:hidden;box-shadow:0 8px 20px rgba(0,0,0,0.3)}
 .reward-img-wrap img{width:100%;display:block}
 
+/* 졸준위 전용 수령 확인 버튼 스타일 */
+.admin-claim-wrap {
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px dashed rgba(255, 255, 255, 0.2);
+}
+.admin-claim-btn {
+  background: var(--pink);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 14px 20px;
+  font-size: 14px;
+  font-weight: 800;
+  width: 100%;
+  transition: background 0.2s;
+}
+.admin-claim-btn:active {
+  background: var(--pink2);
+}
+
 .reset-wrap{text-align:center;margin-top:28px}
 .reset-btn{background:none;border:0;color:#aaa;font-size:12px;text-decoration:underline}
+
+/* 수령 완료 후 사이트 차단 레이어 */
+.blocked-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(23, 21, 26, 0.95);
+  backdrop-filter: blur(8px);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+.blocked-card {
+  background: white;
+  border-radius: 20px;
+  padding: 36px 24px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  max-width: 360px;
+  width: 100%;
+}
+.blocked-icon {
+  font-size: 48px;
+  margin-bottom: 12px;
+}
+.blocked-card h2 {
+  font-size: 22px;
+  margin: 0 0 10px;
+  color: var(--ink);
+}
+.blocked-card p {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.5;
+  margin: 0;
+}
