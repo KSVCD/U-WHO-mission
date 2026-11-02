@@ -137,3 +137,7 @@ h1 em{font-style:normal;color:var(--pink)}
   margin-bottom: 0;
   line-height: 1.4;
 }
+
+.topbar .logo {
+  color: #ff3c9e !important;
+}
