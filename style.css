@@ -228,7 +228,7 @@ h1 em { font-style: normal; color: var(--pink); }
 .blocked-download-btn {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   background: linear-gradient(135deg, #ff3c9e, #ff73bd);
   color: white;
   text-decoration: none;
