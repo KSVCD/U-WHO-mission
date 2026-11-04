@@ -147,24 +147,21 @@ h1 em { font-style: normal; color: var(--pink); }
 /* 이미지 영역 및 위치 이동 설정 */
 .reward-img-wrap {
   width: 100%;
-  height: 420px; 
+  height: 420px; /* 카드의 높이 */
   border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 8px 20px rgba(0,0,0,0.3);
   position: relative;
-  background: #ffffff; /* 여백이 생길 경우 채워질 배경색 */
+  background: #ffffff;
 }
+
 .reward-img-wrap img {
   width: 100%;
   height: 100%;
-  object-fit: contain; /* 사진 비율을 유지하면서 전체가 다 보이게 함 */
-  
-  /* 👇 여기서 사진만 오로지 위로 올립니다! (-20px, -30px 등 원하시는 만큼 숫자를 조절해보세요) */
-  transform: translateY(-25px); 
-  
+  object-fit: cover; /* 사진을 작게 만들지 않고 영역에 꽉 채움 */
+  object-position: 50% 18%; /* 👈 이 숫자를 조절해보세요! 퍼센트가 낮을수록 사진이 아래로, 높을수록 위로 올라갑니다. */
   display: block;
 }
-
 /* 졸준위 전용 수령 확인 버튼 스타일 */
 .admin-claim-wrap {
   margin-top: 20px;
