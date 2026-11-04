@@ -217,31 +217,35 @@ h1 em { font-style: normal; color: var(--pink); }
   max-width: 360px;
   width: 100%;
 }
-.blocked-icon { font-size: 48px; margin-bottom: 12px; }
+.blocked-icon { font-size: 42px; margin-bottom: 10px; }
 .blocked-card h2 { font-size: 22px; margin: 0 0 10px; color: var(--ink); }
 .blocked-card p { font-size: 14px; color: var(--muted); line-height: 1.5; margin: 0 0 20px; }
 
-/* 차단 레이어 내 배경화면 저장 버튼 스타일 추가 */
+/* 새로 디자인된 세련된 배경화면 저장 버튼 스타일 */
 .blocked-download-wrap {
   margin-bottom: 12px;
 }
 .blocked-download-btn {
   display: flex;
   align-items: center;
-  justify-content: center;
-  background: var(--pink);
+  justify-content: space-between;
+  background: linear-gradient(135deg, #ff3c9e, #ff73bd);
   color: white;
   text-decoration: none;
-  border-radius: 12px;
-  padding: 13px 16px;
+  border-radius: 14px;
+  padding: 15px 20px;
   font-size: 14px;
   font-weight: 800;
   width: 100%;
-  box-shadow: 0 4px 12px rgba(255, 60, 158, 0.25);
-  transition: background 0.2s;
+  box-shadow: 0 6px 16px rgba(255, 60, 158, 0.3);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.blocked-download-btn span {
+  font-size: 16px;
+  transition: transform 0.2s;
 }
 .blocked-download-btn:active {
-  background: var(--pink2);
+  transform: scale(0.98);
 }
 
 .blocked-reset-wrap { margin-top: 10px; }
