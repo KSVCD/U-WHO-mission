@@ -1,63 +1,302 @@
 
-*{box-sizing:border-box}
-:root{--pink:#ff3c9e;--pink2:#ff73bd;--ink:#17151a;--muted:#77727a;--line:#ebe7eb;--bg:#faf9fb}
-html,body{margin:0;padding:0;background:#e9e7ea;color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Noto Sans KR",sans-serif}
-body{min-height:100dvh}
-button{font:inherit;cursor:pointer}
+* {
+  box-sizing: border-box;
+}
 
-.app{position:relative;width:100%;max-width:520px;min-height:100dvh;margin:0 auto;background:var(--bg);box-shadow:0 0 40px #00000012;padding-bottom:40px}
-.topbar{height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 22px;border-bottom:1px solid var(--line);background:#ffffffd9;position:sticky;top:0;z-index:5}
+:root {
+  --pink: #ff3c9e;
+  --pink2: #ff73bd;
+  --ink: #17151a;
+  --muted: #77727a;
+  --line: #ebe7eb;
+  --bg: #faf9fb;
+}
 
-/* 왼쪽 상단 로고 핑크색 변경 */
-.logo{font-weight:900;letter-spacing:-.04em;color:var(--pink)}
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: #e9e7ea;
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Noto Sans KR", sans-serif;
+}
 
-.progress{font-size:12px;font-weight:800;letter-spacing:.06em;color:var(--pink)}
+body {
+  min-height: 100dvh;
+}
 
-.screen{padding:28px 22px}
-.hero{text-align:center;margin-bottom:30px}
-.eyebrow{font-size:11px;font-weight:900;letter-spacing:.16em;color:var(--pink);margin:0 0 8px}
-h1{font-size:42px;line-height:.95;letter-spacing:-.06em;margin:0 0 14px}
-h1 em{font-style:normal;color:var(--pink)}
-.lead{font-size:14px;line-height:1.6;color:var(--muted);margin:0}
+button {
+  font: inherit;
+  cursor: pointer;
+}
+
+/* 전체 앱 */
+.app {
+  position: relative;
+  width: 100%;
+  max-width: 520px;
+  min-height: 100dvh;
+  margin: 0 auto;
+  background: var(--bg);
+  box-shadow: 0 0 40px #00000012;
+  padding-bottom: 40px;
+}
+
+/* 상단 바 */
+.topbar {
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 22px;
+  border-bottom: 1px solid var(--line);
+  background: #ffffffd9;
+  position: sticky;
+  top: 0;
+  z-index: 5;
+}
+
+.logo {
+  font-weight: 900;
+  letter-spacing: -.04em;
+  color: var(--pink) !important;
+}
+
+.progress {
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .06em;
+  color: var(--pink);
+}
+
+/* 메인 화면 */
+.screen {
+  padding: 28px 22px;
+}
+
+.hero {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.eyebrow {
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: .16em;
+  color: var(--pink);
+  margin: 0 0 8px;
+}
+
+h1 {
+  font-size: 42px;
+  line-height: .95;
+  letter-spacing: -.06em;
+  margin: 0 0 14px;
+}
+
+h1 em {
+  font-style: normal;
+  color: var(--pink);
+}
+
+.lead {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--muted);
+  margin: 0;
+}
 
 /* 꽃잎 스탬프 */
-.flower-container{position:relative;width:200px;height:200px;margin:0 auto 30px;display:flex;align-items:center;justify-content:center}
-.flower-center{width:70px;height:70px;background:white;border:3px solid var(--pink);border-radius:50%;display:grid;place-items:center;font-weight:900;font-size:20px;color:var(--pink);z-index:2;box-shadow:0 4px 12px rgba(255,60,158,0.15)}
+.flower-container {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  margin: 0 auto 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-.petal{position:absolute;width:75px;height:75px;background:#e2dfe4;border-radius:50%;display:grid;place-items:center;font-weight:900;color:#a29da6;transition:all .3s ease;z-index:1}
-.petal.active{background:var(--pink);color:white;box-shadow:0 6px 16px rgba(255,60,158,0.35)}
+.flower-center {
+  width: 70px;
+  height: 70px;
+  background: white;
+  border: 3px solid var(--pink);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-weight: 900;
+  font-size: 20px;
+  color: var(--pink);
+  z-index: 2;
+  box-shadow: 0 4px 12px rgba(255,60,158,0.15);
+}
 
-.petal-1{transform:translateY(-55px)}
-.petal-2{transform:translate(48px, 30px)}
-.petal-3{transform:translate(-48px, 30px)}
+.petal {
+  position: absolute;
+  width: 75px;
+  height: 75px;
+  background: #e2dfe4;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-weight: 900;
+  color: #a29da6;
+  transition: all .3s ease;
+  z-index: 1;
+}
 
-.petal-1.active{transform:translateY(-58px) scale(1.08)}
-.petal-2.active{transform:translate(50px, 32px) scale(1.08)}
-.petal-3.active{transform:translate(-50px, 32px) scale(1.08)}
+.petal.active {
+  background: var(--pink);
+  color: white;
+  box-shadow: 0 6px 16px rgba(255,60,158,0.35);
+}
 
-.status-box{display:flex;gap:8px;margin-bottom:20px}
-.status-item{flex:1;background:white;border:1px solid var(--line);padding:12px 8px;border-radius:14px;text-align:center;font-size:12px}
-.status-item span{display:block;color:#aaa;font-weight:700;margin-bottom:4px}
-.status-item strong{color:var(--ink);font-size:13px}
-.status-item.done{border-color:var(--pink);background:#fff5f9}
-.status-item.done strong{color:var(--pink)}
+.petal-1 {
+  transform: translateY(-55px);
+}
 
-.guide-note{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px;font-size:13px;color:var(--muted);text-align:center;line-height:1.5}
+.petal-2 {
+  transform: translate(48px, 30px);
+}
 
-.reward-section{margin-top:34px}
-.reward-card{background:var(--ink);color:white;border-radius:24px;padding:28px 20px;text-align:center}
-.reward-card h2{font-size:26px;margin:10px 0}
-.reward-card h2 em{color:var(--pink2);font-style:normal}
-.reward-card p{color:#aaa;font-size:13px;line-height:1.6}
-.reward-img-wrap{margin-top:20px;border-radius:16px;overflow:hidden;box-shadow:0 8px 20px rgba(0,0,0,0.3)}
-.reward-img-wrap img{width:100%;display:block}
+.petal-3 {
+  transform: translate(-48px, 30px);
+}
 
-/* 졸준위 전용 수령 확인 버튼 스타일 */
+.petal-1.active {
+  transform: translateY(-58px) scale(1.08);
+}
+
+.petal-2.active {
+  transform: translate(50px, 32px) scale(1.08);
+}
+
+.petal-3.active {
+  transform: translate(-50px, 32px) scale(1.08);
+}
+
+/* 구역별 완료 상태 */
+.status-box {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.status-item {
+  flex: 1;
+  background: white;
+  border: 1px solid var(--line);
+  padding: 12px 8px;
+  border-radius: 14px;
+  text-align: center;
+  font-size: 12px;
+}
+
+.status-item span {
+  display: block;
+  color: #aaa;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.status-item strong {
+  color: var(--ink);
+  font-size: 13px;
+}
+
+.status-item.done {
+  border-color: var(--pink);
+  background: #fff5f9;
+}
+
+.status-item.done strong {
+  color: var(--pink);
+}
+
+/* QR 안내 */
+.guide-note {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 14px;
+  font-size: 13px;
+  color: var(--muted);
+  text-align: center;
+  line-height: 1.5;
+}
+
+/* =================================
+   ALL CLEAR REWARD
+================================= */
+
+.reward-section {
+  margin-top: 34px;
+}
+
+/* 검은색 영역 바깥의 텍스트 */
+.reward-heading {
+  text-align: center;
+  margin-bottom: 28px;
+  padding: 0 4px;
+}
+
+.reward-heading .eyebrow {
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: .16em;
+  color: var(--pink);
+  margin: 0 0 12px;
+}
+
+.reward-heading h2 {
+  font-size: 26px;
+  line-height: 1.4;
+  margin: 0 0 18px;
+  color: var(--ink);
+}
+
+.reward-heading h2 em {
+  color: var(--pink);
+  font-style: normal;
+}
+
+.reward-heading .reward-description {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* 검은색 보상 이미지 영역 */
+.reward-image-card {
+  background: var(--ink);
+  color: white;
+  border-radius: 24px;
+  padding: 20px;
+  text-align: center;
+}
+
+/* 보상 이미지 */
+.reward-img-wrap {
+  margin-top: 0;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+.reward-img-wrap img {
+  width: 100%;
+  display: block;
+}
+
+/* 졸준위 수령 확인 */
 .admin-claim-wrap {
   margin-top: 24px;
   padding-top: 20px;
-  border-top: 1px dashed rgba(255, 255, 255, 0.2);
+  border-top: 1px dashed rgba(255,255,255,0.2);
 }
+
 .admin-claim-btn {
   background: var(--pink);
   color: white;
@@ -69,14 +308,37 @@ h1 em{font-style:normal;color:var(--pink)}
   width: 100%;
   transition: background 0.2s;
 }
+
 .admin-claim-btn:active {
   background: var(--pink2);
 }
 
-.reset-wrap{text-align:center;margin-top:28px}
-.reset-btn{background:none;border:0;color:#aaa;font-size:12px;text-decoration:underline}
+.admin-guide-text {
+  font-size: 11px;
+  color: #aaa;
+  margin-top: 10px;
+  margin-bottom: 0;
+  line-height: 1.4;
+}
 
-/* 수령 완료 후 사이트 차단 레이어 */
+/* 진행상태 초기화 */
+.reset-wrap {
+  text-align: center;
+  margin-top: 28px;
+}
+
+.reset-btn {
+  background: none;
+  border: 0;
+  color: #aaa;
+  font-size: 12px;
+  text-decoration: underline;
+}
+
+/* =================================
+   수령 완료 후 화면 차단
+================================= */
+
 .blocked-overlay {
   position: absolute;
   top: 0;
@@ -91,6 +353,7 @@ h1 em{font-style:normal;color:var(--pink)}
   justify-content: center;
   padding: 20px;
 }
+
 .blocked-card {
   background: white;
   border-radius: 20px;
@@ -100,24 +363,29 @@ h1 em{font-style:normal;color:var(--pink)}
   max-width: 360px;
   width: 100%;
 }
+
 .blocked-icon {
   font-size: 48px;
   margin-bottom: 12px;
 }
+
 .blocked-card h2 {
   font-size: 22px;
   margin: 0 0 10px;
   color: var(--ink);
 }
+
 .blocked-card p {
   font-size: 14px;
   color: var(--muted);
   line-height: 1.5;
   margin: 0 0 20px;
 }
+
 .blocked-reset-wrap {
   margin-top: 15px;
 }
+
 .blocked-reset-btn {
   background: #f0f0f2;
   color: var(--muted);
@@ -127,17 +395,4 @@ h1 em{font-style:normal;color:var(--pink)}
   font-size: 12px;
   font-weight: 700;
   width: 100%;
-}
-
-/* 수령 확인 버튼 아래 작은 안내 문구 스타일 */
-.admin-guide-text {
-  font-size: 11px;
-  color: #88858d;
-  margin-top: 10px;
-  margin-bottom: 0;
-  line-height: 1.4;
-}
-
-.topbar .logo {
-  color: #ff3c9e !important;
 }
