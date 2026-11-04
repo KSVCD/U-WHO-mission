@@ -157,7 +157,7 @@ h1 em { font-style: normal; color: var(--pink); }
   width: 100%;
   height: 100%;
   object-fit: cover; 
-  object-position: top center; /* 👈 이 부분을 수정했습니다! (위쪽을 기준으로 맞추어 하단 글씨가 보이게 함) */
+  object-position: bottom center; /* 👈 이 부분을 수정했습니다! (위쪽을 기준으로 맞추어 하단 글씨가 보이게 함) */
   display: block;
 }
 
