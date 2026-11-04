@@ -144,10 +144,10 @@ h1 em { font-style: normal; color: var(--pink); }
   text-align: center;
 }
 
-/* 이미지 주변 불필요한 여백을 크롭(확대하여 잘라내기)하도록 설정 */
+/* 이미지 크롭 영역 (object-position을 top center로 변경하여 하단 글씨가 잘리지 않게 위로 당김) */
 .reward-img-wrap {
   width: 100%;
-  height: 420px; /* 화면에 보여줄 적절한 높이 */
+  height: 420px; 
   border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 8px 20px rgba(0,0,0,0.3);
@@ -156,8 +156,8 @@ h1 em { font-style: normal; color: var(--pink); }
 .reward-img-wrap img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* 칠해주신 사방의 여백 영역을 잘라내고 핵심 그림 부분이 꽉 차게 표시되도록 함 */
-  object-position: center;
+  object-fit: cover; 
+  object-position: top center; /* 👈 이 부분을 수정했습니다! (위쪽을 기준으로 맞추어 하단 글씨가 보이게 함) */
   display: block;
 }
 
