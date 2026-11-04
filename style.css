@@ -129,7 +129,7 @@ h1 em { font-style: normal; color: var(--pink); }
   line-height: 1.5;
 }
 
-/* 보상 영역 스타일 (수정됨) */
+/* 보상 영역 스타일 */
 .reward-section { margin-top: 34px; }
 .reward-header { text-align: center; margin-bottom: 18px; }
 .reward-header h2 { font-size: 28px; margin: 8px 0; color: var(--ink); line-height: 1.25; }
@@ -143,12 +143,23 @@ h1 em { font-style: normal; color: var(--pink); }
   padding: 20px;
   text-align: center;
 }
+
+/* 이미지 여백 조정 및 object-fit 적용 부분 */
 .reward-img-wrap {
+  width: 100%;
+  height: 320px; /* 화면에서 보여줄 높이 (필요에 따라 조절 가능) */
   border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  position: relative;
 }
-.reward-img-wrap img { width: 100%; display: block; }
+.reward-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* 위아래 여백을 자연스럽게 가려줌 */
+  object-position: center;
+  display: block;
+}
 
 /* 졸준위 전용 수령 확인 버튼 스타일 */
 .admin-claim-wrap {
