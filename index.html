@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="ko">
 <head>
@@ -10,14 +9,12 @@
 </head>
 <body>
   <main class="app">
-
     <header class="topbar">
       <div class="logo">U! WHO?</div>
       <div class="progress"><span id="progressText">0 / 3</span></div>
     </header>
 
     <div class="screen active">
-
       <div class="hero">
         <p class="eyebrow">2026 GRADUATION EXHIBITION</p>
         <h1>STAMP<br><em>MISSION</em></h1>
@@ -37,20 +34,11 @@
         <div class="petal petal-3" id="petal3"><span>C</span></div>
       </div>
 
-      <!-- 스탬프 현황 -->
+      <!-- 스탬프 현황 안내 -->
       <div class="status-box">
-        <div class="status-item" id="zoneA">
-          <span>A 구역</span>
-          <strong>미완료</strong>
-        </div>
-        <div class="status-item" id="zoneB">
-          <span>B 구역</span>
-          <strong>미완료</strong>
-        </div>
-        <div class="status-item" id="zoneC">
-          <span>C 구역</span>
-          <strong>미완료</strong>
-        </div>
+        <div class="status-item" id="zoneA"><span>A 구역</span> <strong>미완료</strong></div>
+        <div class="status-item" id="zoneB"><span>B 구역</span> <strong>미완료</strong></div>
+        <div class="status-item" id="zoneC"><span>C 구역</span> <strong>미완료</strong></div>
       </div>
 
       <div class="guide-note">
@@ -59,75 +47,50 @@
 
       <!-- 3개 완주 시 열리는 보상 영역 -->
       <div id="rewardSection" class="reward-section" style="display: none;">
-
-        <!-- 검은색 영역 바깥의 안내 텍스트 -->
-        <div class="reward-heading">
+        <!-- 검은색 바깥으로 이동한 텍스트 헤더 -->
+        <div class="reward-header">
           <p class="eyebrow">ALL CLEAR REWARD</p>
-
-          <h2>
-            축하합니다!<br>
-            <em>꽃이 완전히 피었습니다.</em>
-          </h2>
-
-          <p class="reward-description">
-            U!WHO? 배경화면을 저장하고,<br>
-            안내데스크에 완료화면을 보여주고<br>
-            랜덤 가챠에 참여하세요!
+          <h2>축하합니다!<br><em>꽃이 완전히 피었습니다.</em></h2>
+          <p class="reward-subtext">
+            안내데스크에 완료화면을 보여주고 랜덤 가챠에 참여하세요!
           </p>
         </div>
 
-        <!-- 검은색 보상 이미지 영역 -->
-        <div class="reward-image-card">
-
+        <!-- 이미지 및 졸준위 버튼이 담긴 검은색 카드 -->
+        <div class="reward-card">
           <div class="reward-img-wrap">
             <img src="reward.png" alt="보상 이미지" loading="lazy">
           </div>
 
-          <!-- 졸준위 전용 수령 확인 -->
+          <!-- 졸준위 전용 수령 확인 버튼 및 안내 문구 -->
           <div class="admin-claim-wrap">
             <button id="adminClaimBtn" class="admin-claim-btn" onclick="verifyAdminCode()">
               🔒 수령 확인 (졸준위 전용)
             </button>
-
-            <p class="admin-guide-text">
-              직원에게 이 완료 화면을 보여주시면 뽑기권을 드립니다.
-            </p>
+            <p class="admin-guide-text">직원에게 이 완료 화면을 보여주시면 뽑기권을 드립니다.</p>
           </div>
-
         </div>
       </div>
 
-      <!-- 진행상태 초기화 -->
       <div class="reset-wrap">
         <button class="reset-btn" onclick="verifyResetCode()">진행상태 초기화</button>
       </div>
-
     </div>
 
-    <!-- 수령 완료 후 화면 차단 -->
+    <!-- 수령 완료 후 화면 차단 레이어 -->
     <div id="blockedOverlay" class="blocked-overlay" style="display: none;">
       <div class="blocked-card">
-
         <div class="blocked-icon">✅</div>
-
         <h2>보상 수령 완료</h2>
-
-        <p>
-          이미 리워드(상품) 수령이 완료된 페이지입니다.<br>
-          중복 수령은 불가능합니다.
-        </p>
-
+        <p>이미 리워드(상품) 수령이 완료된 페이지입니다.<br>중복 수령은 불가능합니다.</p>
+        
+        <!-- 수령 완료 화면 내 초기화 버튼 -->
         <div class="blocked-reset-wrap">
-          <button class="blocked-reset-btn" onclick="verifyResetCode()">
-            초기화 (코드 입력)
-          </button>
+          <button class="blocked-reset-btn" onclick="verifyResetCode()">초기화 (코드 입력)</button>
         </div>
-
       </div>
     </div>
-
   </main>
-
   <script src="script.js"></script>
 </body>
 </html>
