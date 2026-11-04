@@ -147,17 +147,25 @@ h1 em { font-style: normal; color: var(--pink); }
 /* 이미지 크롭 영역 (object-position을 top center로 변경하여 하단 글씨가 잘리지 않게 위로 당김) */
 .reward-img-wrap {
   width: 100%;
-  height: 420px; 
+  height: 400px; /* 박스 높이를 살짝 줄이거나 늘려서 조절할 수 있습니다 */
   border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 8px 20px rgba(0,0,0,0.3);
   position: relative;
 }
+
 .reward-img-wrap img {
   width: 100%;
   height: 100%;
   object-fit: cover; 
-  object-position: bottom center; /* 👈 이 부분을 수정했습니다! (위쪽을 기준으로 맞추어 하단 글씨가 보이게 함) */
+  /* 
+    object-position: [가로축] [세로축];
+    세로축 퍼센트 수치를 조절하여 위·아래로 사진을 이동시킬 수 있습니다.
+    50% 50%가 정확히 정중앙이며, 숫자를 낮추면(예: 45%) 사진이 아래로 내려가고,
+    숫자를 높이면 사진이 위로 올라갑니다. 
+    하단 글씨를 맞추시려면 이 수치를 40% ~ 48% 사이로 미세 조정해 보세요!
+  */
+  object-position: 50% 40%; 
   display: block;
 }
 
